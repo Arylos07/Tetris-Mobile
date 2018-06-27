@@ -547,8 +547,8 @@ MonoBehaviour:
     a build for personal use only and is not to be distributed on any platform outside
     of the Templarius Studios website as a project example. Do not share, upload,
     or distribute this build under any circumstances. This game is not for commercial
-    sale, distribution, or use; Templarius Games Studios LLC and Michael Cox makes
-    no revenue from the creation of this game."
+    sale, distribution, or use; Templarius Games Studios LLC, Michael Cox, nor any
+    affiliated party make revenue from the creation of this game."
 --- !u!222 &1243768720
 CanvasRenderer:
   m_ObjectHideFlags: 0
