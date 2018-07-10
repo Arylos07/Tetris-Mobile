@@ -18,11 +18,21 @@ public class Spawner : MonoBehaviour
     public Settings settings;
     private int n = 0;
     private int i = 0;
+    public bool isGauntlet = false;
+    public float reduce;
+    public Timer timer;
 
     private void Start()
     {
         Init();
-        settings.Init();
+        if (isGauntlet)
+        {
+            settings.Init(reduce);
+        }
+        else
+        {
+            settings.Init();
+        }
         StartCoroutine(Countdown());
     }
 
@@ -35,44 +45,62 @@ public class Spawner : MonoBehaviour
 
     public IEnumerator DestroyGroups(GameObject[] objects)
     {
+        if(timer != null)
+        {
+            timer.runTimer = false;
+        }
+
         foreach(GameObject obj in objects)
         {
             yield return new WaitForSeconds(0.025f);
             Destroy(obj);
         }
 
-        Scoring.GameOver();
+        if (isGauntlet == false)
+        {
+            Scoring.GameOver();
+        }
+        else if(isGauntlet == true)
+        {
+            timer.runTimer = false;
+            settings.ResetSpeed(reduce);
+            Scoring.GauntletOver();
+        }
     }
 
     public void SpawnNext()
     {
-        DisableDrop();
-        obj = Instantiate(groups[spawn], transform.position, Quaternion.identity);
-        obj.GetComponent<Group>().hardDrop = false;
+        DisableDrop(); //disable the last block
+        obj = Instantiate(groups[spawn], transform.position, Quaternion.identity); //spawn the next block
+        obj.GetComponent<Group>().hardDrop = false; //allow block to fall normally
 
-        n++;
+        n++;    //counter to determine block
 
-        if (n >= Random.Range(4, 12))
+        //n means the number of spawns, used to determine frequency of certain block spawns
+
+        if (n >= Random.Range(4, 12)) //if counter is greater than or equal to a random number between 4-12
+            //the higher the counter (the more spawns), the more likely that it will spawn an i piece.
         {
-            i = 0;
-            n = 0;
+            i = 0; //manually spawn the i piece (line)
+            n = 0; //reset counter
         }
-        else
+        else //if it does not match the number
         {
-            i = Random.Range(0, groups.Length);
+            i = Random.Range(0, groups.Length); //roll for the 7 pieces plus an 8th "reroll"
             if (i == groups.Length)
             {
-                i = Random.Range(0, groups.Length - 1);
+                i = Random.Range(0, groups.Length - 1); // if reroll is selected, roll again, but without the reroll. (creates randomness)
             }
         }
 
-        if(i >= 4 && n >= 6)
+        if(i >= 4 && n >= 6) //if it has been a while since the last i piece
         {
-            i = Random.Range(0, 3);
+            i = Random.Range(0, 3); //spawn I, L, or J pieces by default.
         }
-        spawn = i;
-        SetControls(obj);
-        preview.UpdatePreview(i);
+
+        spawn = i; //the block to be spawned when this function is called
+        SetControls(obj); //tell controls to use this block
+        preview.UpdatePreview(i); //Show preview of next piece
     }
 
     public void PauseGame()
@@ -155,6 +183,11 @@ public class Spawner : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1);
         countDown.text = "Go!";
+        UIControl.canDrop = true;
+        if (isGauntlet)
+        {
+            timer.runTimer = true;
+        }
         SpawnNext();
         pauseButton.UpdateButton();
         settingsButton.UpdateButton();

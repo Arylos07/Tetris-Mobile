@@ -16,6 +16,7 @@ public class Scoring : MonoBehaviour
     public static int levelNum = 0;
     public SceneLoader sceneLoader;
     public Animator background;
+    public Timer timer;
 
     public AudioSource sfxSource;
     public AudioClip scoreSFX;
@@ -64,15 +65,63 @@ public class Scoring : MonoBehaviour
 
                     SaveLoad.name2 = "--------";
                     SaveLoad.score2 = score;
+                    SaveLoad.level2 = level;
                 }
             }
             else
             {
                 SaveLoad.name3 = "--------";
                 SaveLoad.score3 = score;
+                SaveLoad.level3 = level;
             }
             HighScoresLoader.fromGame = true;
-            GameObject.FindGameObjectWithTag("Scoring").GetComponent<Scoring>().sceneLoader.LoadScene("TopScores");
+            GameObject.FindGameObjectWithTag("Scoring").GetComponent<Scoring>().sceneLoader.LoadScene("FreePlayScores");
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("Scoring").GetComponent<Scoring>().sceneLoader.LoadScene("MainMenu");
+        }
+    }
+
+    public static void GauntletOver()
+    {
+        if (score >= SaveLoad.gscore3)
+        {
+            if (score >= SaveLoad.gscore2)
+            {
+                if (score >= SaveLoad.gtopScore)
+                {
+                    SaveLoad.gname3 = SaveLoad.gname2;
+                    SaveLoad.gscore3 = SaveLoad.gscore2;
+                    SaveLoad.glevel3 = SaveLoad.glevel2;
+
+                    SaveLoad.gname2 = SaveLoad.gtopName;
+                    SaveLoad.gscore2 = SaveLoad.gtopScore;
+                    SaveLoad.glevel2 = SaveLoad.gtopLevel;
+
+                    SaveLoad.gtopName = "--------";
+                    SaveLoad.gtopScore = score;
+                    SaveLoad.gtopLevel = level;
+                }
+                else
+                {
+                    SaveLoad.gname3 = SaveLoad.gname2;
+                    SaveLoad.gscore3 = SaveLoad.gscore2;
+                    SaveLoad.glevel3 = SaveLoad.glevel2;
+
+                    SaveLoad.gname2 = "--------";
+                    SaveLoad.gscore2 = score;
+                    SaveLoad.glevel2 = level;
+                }
+            }
+            else
+            {
+                SaveLoad.gname3 = "--------";
+                SaveLoad.gscore3 = score;
+                SaveLoad.glevel3 = level;
+            }
+            GauntletScoresLoader.fromGame = true;
+            GameObject.FindGameObjectWithTag("Scoring").GetComponent<Scoring>().sceneLoader.LoadScene("GauntletScores");
         }
         else
         {
@@ -137,6 +186,10 @@ public class Scoring : MonoBehaviour
 
         if (level > levelNum)
         {
+            if(self.timer != null)
+            {
+                self.timer.timer = self.timer.timerStart;
+            }
             self.sfxSource.PlayOneShot(self.levelUp);
             levelNum = level;
             Settings.IncreaseColour();

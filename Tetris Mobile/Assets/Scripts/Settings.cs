@@ -24,6 +24,35 @@ public class Settings : MonoBehaviour
         speed = (speeds[0] * speedMult);
     }
 
+    public void Init(float reduce)
+    {
+        if (speedMult == 0)
+            speedMult = 1;
+
+        levelNum = 0;
+
+        int i = 0;
+        foreach (float speed in speeds)
+        {
+            speeds[i] = speeds[i] * reduce;
+
+            i++;
+        }
+
+        speed = (speeds[0] * speedMult);
+    }
+
+    public void ResetSpeed(float reduce)
+    {
+        int i = 0;
+        foreach (float speed in speeds)
+        {
+            speeds[i] = speeds[i] / reduce;
+
+            i++;
+        }
+    }
+
     public static void ChangeSpeed(int index)
     {
         speed = (speeds[index] * speedMult);

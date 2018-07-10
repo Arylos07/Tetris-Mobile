@@ -15,6 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlay.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Gauntlet.unity
+    guid: 1f683eae4b4d9e44f8f89a9b63e66cc1
+  - enabled: 1
     path: Assets/Scenes/TopScores.unity
     guid: dfbc4a7e27c3b3d4087ee7b78609e440
+  - enabled: 1
+    path: Assets/Scenes/GauntletScores.unity
+    guid: e17433c52200bfb44be390f91250b129
+  - enabled: 1
+    path: Assets/Scenes/FreePlayScores.unity
+    guid: ca0dd780b5228704ea31c683e899a190
   m_configObjects: {}

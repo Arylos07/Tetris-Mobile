@@ -20,6 +20,18 @@ public class SaveLoad : MonoBehaviour
     public static int score3;
     public static int level3;
 
+    public static string gtopName;
+    public static int gtopScore;
+    public static int gtopLevel;
+
+    public static string gname2;
+    public static int gscore2;
+    public static int glevel2;
+
+    public static string gname3;
+    public static int gscore3;
+    public static int glevel3;
+
     void Start()
     {
         //Stream the manager so it can be called at any point in the game to save any variables.
@@ -46,12 +58,25 @@ public class SaveLoad : MonoBehaviour
         saver.name3 = name3;
         saver.score3 = score3;
         saver.level3 = level3;
+
+        saver.gtopName = gtopName;
+        saver.gtopScore = gtopScore;
+        saver.gtopLevel = gtopLevel;
+
+        saver.gname2 = gname2;
+        saver.gscore2 = gscore2;
+        saver.glevel2 = glevel2;
+
+        saver.gname3 = gname3;
+        saver.gscore3 = gscore3;
+        saver.glevel3 = glevel3;
         //Add other variables if needed...
 
         //Encrypt information
         binary.Serialize(fStream, saver);
         //Close file.
         fStream.Close();
+        Load();
     }
 
     public static void SaveConfig()
@@ -131,7 +156,36 @@ public class SaveLoad : MonoBehaviour
             score3 = saver.score3;
             level3 = saver.level3;
 
+            gtopName = saver.gtopName;
+            gtopScore = saver.gtopScore;
+            gtopLevel = saver.gtopLevel;
+
+            gname2 = saver.gname2;
+            gscore2 = saver.gscore2;
+            glevel2 = saver.glevel2;
+
+            gname3 = saver.gname3;
+            gscore3 = saver.gscore3;
+            glevel3 = saver.glevel3;
+
             //Add other variables if needed...
+            if(gtopScore == 0)
+            {
+                gtopName = "Alexey";
+                gtopScore = 2000;
+                gtopLevel = 4;
+
+                gname2 = "Howard";
+                gscore2 = 1000;
+                glevel2 = 3;
+
+                gname3 = "Otasan";
+                gscore3 = 800;
+                glevel3 = 2;
+
+                Save();
+            }
+
         }
         else
         {
@@ -146,6 +200,18 @@ public class SaveLoad : MonoBehaviour
             name3 = "Otasan";
             score3 = 7500;
             level3 = 5;
+
+            gtopName = "Alexey";
+            gtopScore = 2000;
+            gtopLevel = 4;
+
+            gname2 = "Howard";
+            gscore2 = 1000;
+            glevel2 = 3;
+
+            gname3 = "Otasan";
+            gscore3 = 800;
+            glevel3 = 2;
 
             Save();
         }
@@ -178,6 +244,18 @@ class SaveManager
     public string name3;
     public int score3;
     public int level3;
+
+    public string gtopName;
+    public int gtopScore;
+    public int gtopLevel;
+
+    public string gname2;
+    public int gscore2;
+    public int glevel2;
+
+    public string gname3;
+    public int gscore3;
+    public int glevel3;
     //Add other variaables if needed...
 }
 

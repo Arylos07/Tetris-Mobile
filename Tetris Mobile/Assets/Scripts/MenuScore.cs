@@ -7,14 +7,26 @@ public class MenuScore : MonoBehaviour
 {
     public Text TopScore;
     public Text TopScoreName;
+    public bool isGauntlet = false;
 
 	// Use this for initialization
 	void Start ()
     {
-        TopScore.text = SaveLoad.topScore.ToString();
+        if (isGauntlet == true)
+        {
+            TopScore.text = SaveLoad.gtopScore.ToString();
 
-        if(TopScoreName != null)
-            TopScoreName.text = SaveLoad.topName;
-	}
+            if (TopScoreName != null)
+                TopScoreName.text = SaveLoad.topName;
+        }
+
+        else if (isGauntlet == false)
+        {
+            TopScore.text = SaveLoad.topScore.ToString();
+
+            if (TopScoreName != null)
+                TopScoreName.text = SaveLoad.topName;
+        }
+    }
 	
 }

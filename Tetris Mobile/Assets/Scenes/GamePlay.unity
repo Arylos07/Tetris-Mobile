@@ -259,8 +259,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -283.00003, y: -1114.9}
-  m_SizeDelta: {x: 630, y: 75}
+  m_AnchoredPosition: {x: -283.00003, y: -937.3998}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &66369592
 GameObject:
@@ -760,17 +760,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Soft Drop
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1264875141}
-        m_MethodName: ButtonEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2677,7 +2666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -473, y: -937.39984}
+  m_AnchoredPosition: {x: -550, y: -937.39984}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &473000978
@@ -3611,7 +3600,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 650084180}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
@@ -3621,7 +3610,7 @@ Transform:
   - {fileID: 1831010566}
   m_Father: {fileID: 177464090}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &677624253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4022,7 +4011,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hard Drop
+  m_Text: 'Hard
+
+    Drop'
 --- !u!222 &708328342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4058,6 +4049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopScore: {fileID: 2101019394}
   TopScoreName: {fileID: 0}
+  isGauntlet: 0
 --- !u!4 &712449659
 Transform:
   m_ObjectHideFlags: 0
@@ -7545,6 +7537,7 @@ MonoBehaviour:
   linesText: {fileID: 700122981}
   sceneLoader: {fileID: 569389632}
   background: {fileID: 442030975}
+  timer: {fileID: 0}
   sfxSource: {fileID: 1264875142}
   scoreSFX: {fileID: 8300000, guid: 703c673595f444943954ca6b1d983066, type: 3}
   tetris: {fileID: 8300000, guid: e41cdf48aca73a147bf2bcdf7ed5678c, type: 3}
@@ -7882,17 +7875,6 @@ MonoBehaviour:
           m_StringArgument: Soft Drop
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1264875141}
-        m_MethodName: ButtonEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1475152449
@@ -7951,7 +7933,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1488516606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
@@ -7961,7 +7943,7 @@ Transform:
   - {fileID: 1466424771}
   m_Father: {fileID: 177464090}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &1548503229
 GameObject:
   m_ObjectHideFlags: 0
@@ -8312,7 +8294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -93, y: -937.39984}
+  m_AnchoredPosition: {x: -15, y: -937.39984}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1599288599
@@ -8559,7 +8541,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'ver: 1.4'
+  m_Text: 'ver: 1.5'
 --- !u!222 &1621935909
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8616,6 +8598,9 @@ MonoBehaviour:
   HardDrop: {fileID: 1548503232}
   HardDrop2: {fileID: 4615789}
   settings: {fileID: 1571213602}
+  isGauntlet: 0
+  reduce: 0.1
+  timer: {fileID: 0}
 --- !u!4 &1641846774
 Transform:
   m_ObjectHideFlags: 0
@@ -8661,6 +8646,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 02afbcce49b897c4da73722e1acfd374, type: 3}
   - {fileID: 8300000, guid: 2bd9743fff202a344b801f6501758779, type: 3}
   - {fileID: 8300000, guid: 534bf22b32a4c4340a8fcba3d20d6aaa, type: 3}
+  - {fileID: 8300000, guid: 6657a26d720b0724b8d56acd6a404857, type: 3}
   musicSource: {fileID: 1291498545}
   musicText: {fileID: 0}
 --- !u!4 &1688471459

@@ -11,6 +11,10 @@ public class Credits : MonoBehaviour
     public GameObject Disclaimer;
     public GameObject HighScores;
 
+    public GameObject FreeMode;
+    public GameObject Gauntlet;
+    public GameObject Back;
+
     public void OpenCredits()
     {
         Disclaimer.SetActive(false);
@@ -25,6 +29,32 @@ public class Credits : MonoBehaviour
     {
         Disclaimer.SetActive(true);
         creditsText.SetActive(false);
+        credits.SetActive(true);
+        Play.SetActive(true);
+        Settings.SetActive(true);
+        HighScores.SetActive(true);
+    }
+
+    public void OpenPlay()
+    {
+        FreeMode.SetActive(true);
+        Gauntlet.SetActive(true);
+        Back.SetActive(true);
+
+        Disclaimer.SetActive(false);
+        Play.SetActive(false);
+        Settings.SetActive(false);
+        credits.SetActive(false);
+        HighScores.SetActive(false);
+    }
+
+    public void ClosePlay()
+    {
+        FreeMode.SetActive(false);
+        Gauntlet.SetActive(false);
+        Back.SetActive(false);
+
+        Disclaimer.SetActive(true);
         credits.SetActive(true);
         Play.SetActive(true);
         Settings.SetActive(true);

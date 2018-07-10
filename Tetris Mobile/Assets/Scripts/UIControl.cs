@@ -70,6 +70,7 @@ public class UIControl : MonoBehaviour
 
                     // Modify position
                     target.transform.position += new Vector3(0, -1, 0);
+                    sfxSource.PlayOneShot(move);
 
                     // See if valid
                     if (target.IsValidGridPos())

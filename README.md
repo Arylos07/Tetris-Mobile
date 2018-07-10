@@ -40,6 +40,8 @@ Tetris Mobile.apk is present within repository. To load onto phone, connect phon
 
 Once downloaded, locate .apk file in your phone's file explorer and tap on the file. (A warning regarding trusting the installer may come up. You may select to allow installation this once.) Once installation is complete, the app is successfully loaded onto the device.
 
+To update mobile app, delete .apk file from file explorer (not the app) and download desired release to your phone. Then run the .apk file; the app will automatically update.
+
 
 # Final note
 This is a personal project and is only intended for personal use. Special thanks to Leilani Gossett for making this project a reality. 

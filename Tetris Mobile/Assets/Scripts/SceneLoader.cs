@@ -9,9 +9,14 @@ public class SceneLoader : MonoBehaviour
     public GameObject header;
     public GameObject borders;
     public GameObject preview;
+    public Settings settings;
 
     public void Restart()
     {
+        if(settings != null)
+        {
+            settings.ResetSpeed(0.4f);
+        }
         StartCoroutine(ResetRun());
     }
 	

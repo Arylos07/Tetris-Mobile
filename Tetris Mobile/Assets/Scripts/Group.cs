@@ -191,6 +191,7 @@ public class Group : MonoBehaviour
             {
                 // Modify position
                 transform.position += new Vector3(0, -1, 0);
+                Scoring.score++;
 
                 // See if valid
                 if (IsValidGridPos())
@@ -208,6 +209,7 @@ public class Group : MonoBehaviour
 
                     // Disable script
                     enabled = false;
+                    Scoring.UpdateUI();
 
                     // Spawn next Group
                     FindObjectOfType<Spawner>().SpawnNext();
