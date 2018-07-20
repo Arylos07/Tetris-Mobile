@@ -33,4 +33,16 @@ public class MusicManager : MonoBehaviour
 
         SaveLoad.SaveConfig();
     }
+
+    public void NextSong()
+    {
+        if((trackID + 1) > (music.Length - 1))
+        {
+            UpdateMusic(0);
+        }
+        else
+        {
+            UpdateMusic(trackID + 1);
+        }
+    }
 }

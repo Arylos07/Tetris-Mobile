@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public float reduce;
     public GameObject curtain;
     public GameObject header;
     public GameObject borders;
@@ -40,6 +41,11 @@ public class SceneLoader : MonoBehaviour
     {
         if (preview != null)
             preview.SetActive(false);
+
+        if(sceneName == "MainMenu" && SceneManager.GetActiveScene().name == "Gauntlet")
+        {
+            settings.ResetSpeed(reduce);
+        }
 
         header.SetActive(false);
         curtain.SetActive(true);

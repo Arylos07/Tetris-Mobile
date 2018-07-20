@@ -3,7 +3,7 @@
 This game is developed for personal, non-commercial use and is not meant to be distributed for commercial use.
 Michael Cox nor Templarius Games Studios LLC or any affiliated party make any revenue from this game.
 
-Version: 1.4
+Version: 1.5.1
 Requires: Unity 2018.1.0f2
 Build requires Samsung OS 4.1 (Jelly Bean) or higher. **Untested on OS 8.1 (Oreo); issues with Always On Display may be present.**
 
@@ -27,6 +27,10 @@ Music:
 "Tetris Theme" - performed by Michael Cox
 
 "A Mad Russian's Christmas" - Trans Siberian Orchestra
+
+"Dance of the Sugar Plum Fairy" - Lindsay Stirling
+
+"Fallen Angel" - Masayoshi Soken, Final Fantasy XIV OST
 
 Special thanks to Leilani Gossett.
 

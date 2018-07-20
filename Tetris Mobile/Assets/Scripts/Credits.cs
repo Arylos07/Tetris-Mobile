@@ -60,4 +60,13 @@ public class Credits : MonoBehaviour
         Settings.SetActive(true);
         HighScores.SetActive(true);
     }
+
+    public void ToggleMenu(bool status)
+    {
+        Play.SetActive(status);
+        Settings.SetActive(status);
+        credits.SetActive(status);
+        HighScores.SetActive(status);
+        Disclaimer.SetActive(status);
+    }
 }

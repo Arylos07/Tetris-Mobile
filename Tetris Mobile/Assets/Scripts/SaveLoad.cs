@@ -223,6 +223,16 @@ public class SaveLoad : MonoBehaviour
         {
             File.Delete(Application.persistentDataPath + "/data.sav");
             //File.Delete(Application.persistentDataPath + "/savegameAUTO.save");
+            SceneManager.LoadScene("Splash");
+        }
+    }
+
+    public static void DeleteConfig()
+    {
+        if (File.Exists(Application.persistentDataPath + "/config.conf"))
+        {
+            File.Delete(Application.persistentDataPath + "/config.conf");
+            SceneManager.LoadScene("Splash");
         }
     }
 }
